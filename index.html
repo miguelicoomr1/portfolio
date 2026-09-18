@@ -248,17 +248,19 @@
   <script>
     document.documentElement.classList.add("js");
 
-    // Para añadir un proyecto: nueva entrada en esta lista.
+    // Para añadir un proyecto: nueva entrada en esta lista (logo opcional: ruta a su icono).
     const projects = [
       {
         name: "Mosco Events",
         url: "https://www.moscoevents.com/index.html",
+        logo: "assets/logos/moscoevents.png",
         description: "Web para una organización de partidas de airsoft realistas. Los jugadores se inscriben, consultan las imágenes de los eventos y contactan con el propietario.",
         tags: ["Inscripciones", "Galería de imágenes", "Contacto"]
       },
       {
         name: "Supremo Barber",
         url: "https://supremo-1uh.pages.dev",
+        logo: "assets/logos/supremo.png",
         description: "Web para una barbería de ciudad, con sistema de registro de citas y una zona privada desde la que el negocio administra su agenda.",
         tags: ["Reserva de citas", "Zona privada", "Administración"]
       }
@@ -287,7 +289,7 @@
       img.src = "https://image.thum.io/get/width/1400/crop/875/" + p.url;
 
       const logo = art.querySelector(".logo");
-      logo.src = "https://www.google.com/s2/favicons?domain=" + host + "&sz=64";
+      logo.src = p.logo || "https://www.google.com/s2/favicons?domain=" + host + "&sz=64";
       logo.onerror = () => logo.remove();
 
       art.querySelector(".n").textContent = p.name;

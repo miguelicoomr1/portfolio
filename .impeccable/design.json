@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-18T00:00:00Z",
+  "title": "Design System: Portfolio MiguelicooMR1",
+  "extensions": {
+    "colorMeta": {
+      "accent-brass": { "role": "primary", "displayName": "Latón de Proyector", "canonical": "#e0a63a", "tonalRamp": ["#3a2a08","#5c4210","#84601a","#ad7f26","#e0a63a","#eabb63","#f2d08f","#f9e8c5"] },
+      "ground-black": { "role": "neutral", "displayName": "Negro de Sala", "canonical": "#0d0c0b", "tonalRamp": ["#0d0c0b","#161412","#2b2723","#4a443d","#6f675d","#a8a094","#d3ccc0","#efeae2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Nombre en el hero y titular de contacto, mayúsculas." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de sección y de proyecto." },
+      "body": { "displayName": "Body", "purpose": "Descripciones, máximo 46ch." }
+    },
+    "shadows": [
+      { "name": "screen-drop", "value": "0 30px 60px -20px rgba(0,0,0,.7)", "purpose": "Sombra bajo las pantallas de proyecto." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "Revelación de pantallas, hover de botones y filas." }
+    ],
+    "breakpoints": [
+      { "name": "desktop", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal: Hablemos.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Hablemos</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;background:#e0a63a;color:#0d0c0b;font-weight:600;text-decoration:none;padding:16px 26px;border-radius:999px;transition:transform .3s cubic-bezier(.16,1,.3,1),background .2s}.ds-btn:hover{transform:translateY(-3px);background:#f0b94f}.ds-btn:focus-visible{outline:2px solid #e0a63a;outline-offset:4px}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Etiqueta de funcionalidad de un proyecto.",
+      "html": "<span class=\"ds-chip\">Reserva de citas</span>",
+      "css": ".ds-chip{display:inline-block;border:1px solid #2b2723;border-radius:999px;padding:4px 14px;font-size:.85rem;color:#efeae2}"
+    },
+    {
+      "name": "Screen Frame",
+      "kind": "card",
+      "refersTo": "screen-frame",
+      "description": "Marco de vista previa de un proyecto.",
+      "html": "<div class=\"ds-frame\">Vista previa</div>",
+      "css": ".ds-frame{aspect-ratio:16/10;background:#161412;border:1px solid #2b2723;border-radius:6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7);display:grid;place-items:center;color:#a8a094;min-width:240px}"
+    },
+    {
+      "name": "Contact Row",
+      "kind": "custom",
+      "description": "Fila de contacto con etiqueta y valor.",
+      "html": "<a class=\"ds-row\" href=\"#\"><span class=\"ds-l\">Email</span><span class=\"ds-v\">correo@ejemplo.com</span></a>",
+      "css": ".ds-row{display:flex;align-items:center;gap:18px;padding:24px 4px;border-bottom:1px solid #2b2723;color:#efeae2;text-decoration:none;transition:padding .35s cubic-bezier(.16,1,.3,1),color .2s}.ds-row:hover{padding-left:16px;color:#e0a63a}.ds-l{color:#a8a094;font-size:.85rem;min-width:96px}.ds-v{font-size:1.2rem;font-weight:500}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Projection Booth",
+    "overview": "Sala oscura donde cada web se proyecta como una pantalla iluminada. Casi negro con un único acento latón; densidad baja, un proyecto por escena; componentes seguros y precisos.",
+    "keyCharacteristics": [
+      "Fondo casi negro cálido, texto hueso, un solo acento ámbar.",
+      "Titulares condensados en mayúsculas; cuerpo en grotesca limpia.",
+      "Vistas previas grandes como protagonistas, alternando lado.",
+      "Grano de película fijo, muy tenue.",
+      "Un momento animado: la revelación de la pantalla al hacer scroll."
+    ],
+    "rules": [
+      { "name": "The One Brass Rule", "body": "El latón es el único color de acento. Nunca se añade un segundo.", "section": "colors" },
+      { "name": "The Cap Ceiling Rule", "body": "Ningún titular supera 6rem.", "section": "typography" }
+    ],
+    "dos": [
+      "Do dejar que las vistas previas de los proyectos sean lo más grande y luminoso de la escena.",
+      "Do usar el latón (#e0a63a) solo para acciones y una palabra de énfasis.",
+      "Do mantener los titulares en condensado y mayúsculas, ≤6rem.",
+      "Do animar una sola cosa: la revelación de la pantalla; respetar prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't presentar los proyectos como una cuadrícula de tarjetas iguales; cada uno es una escena.",
+      "Don't añadir brillos, halos ni segundos colores de acento.",
+      "Don't usar texto degradado ni bordes laterales de color en bloques."
+    ]
+  }
+}

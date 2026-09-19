@@ -63,14 +63,18 @@
 
     /* hero */
     .hero {
-      position: relative; min-height: 100svh;
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 140px 0 72px;
+      position: relative; min-height: min(100svh, 860px);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 112px 0 56px;
       background:
         radial-gradient(120% 80% at 80% 0%, #1d1913 0%, transparent 60%),
         var(--bg);
       border-bottom: 1px solid var(--line);
     }
+    .hero-content {
+      display: grid; gap: 42px; align-items: end;
+    }
+    .hero-copy { position: relative; z-index: 1; }
     .hero h1 {
       font-family: var(--display); font-weight: 900; text-transform: uppercase;
       font-size: clamp(3.4rem, 15vw, 6rem);
@@ -91,6 +95,23 @@
     .btn:hover { transform: translateY(-3px); background: #f0b94f; }
     .btn svg { width: 18px; height: 18px; }
     .scroll-cue { margin-top: 48px; font-size: .85rem; color: var(--muted); letter-spacing: .04em; }
+
+    /* hero illustration: responsive websites across devices */
+    .hero-visual {
+      position: relative; width: 100%; max-width: 600px; justify-self: end;
+      filter: drop-shadow(0 30px 35px rgba(0,0,0,.38));
+    }
+    .hero-visual img { display: block; width: 100%; height: auto; mix-blend-mode: screen; }
+    @media (min-width: 900px) {
+      .hero-content { grid-template-columns: minmax(0, .95fr) minmax(400px, 1.05fr); gap: 54px; }
+      .hero-row { margin-top: 32px; }
+      .scroll-cue { margin-top: 38px; }
+    }
+    @media (max-width: 540px) {
+      .hero { min-height: auto; padding-top: 112px; padding-bottom: 52px; }
+      .hero-visual { width: min(100%, 410px); }
+      .scroll-cue { margin-top: 26px; }
+    }
 
     /* projects */
     .section-title {
@@ -189,15 +210,20 @@
       <a class="brand" href="#top" id="top">MiguelicooMR1</a>
       <a class="nav" href="#contacto">Contacto</a>
     </div>
-    <div class="wrap">
-      <h1>Miguelicoo<em>MR1</em></h1>
-      <div class="hero-row">
-        <p class="lede">Aprendiendo y mejorando tu negocio.</p>
-        <a class="btn" href="#contacto">Hablemos
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+    <div class="wrap hero-content">
+      <div class="hero-copy">
+        <h1>Miguelicoo<em>MR1</em></h1>
+        <div class="hero-row">
+          <p class="lede">Aprendiendo y mejorando tu negocio.</p>
+          <a class="btn" href="#contacto">Hablemos
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <p class="scroll-cue">Webs para eventos y negocios ↓</p>
       </div>
-      <p class="scroll-cue">Webs para eventos y negocios ↓</p>
+      <div class="hero-visual">
+        <img src="assets/hero-web-devices.png" alt="Ordenador, tableta y móvil mostrando el diseño responsive de una web">
+      </div>
     </div>
   </header>
 

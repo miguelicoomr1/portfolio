@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio MiguelicooMR1</title>
+<title>Mejora 1 · Índice</title>
 <meta name="description" content="Webs para eventos y negocios, hechas por MiguelicooMR1.">
 <meta name="theme-color" content="#e8e4db">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,16 +103,6 @@
     .js .work .frame, .js .work .label { clip-path: none !important; opacity: 1 !important; transform: none !important; transition: none; }
   }
 
-  .lobby { min-height: 0; padding: 40px 0 56px; justify-content: flex-start; }
-  .strip { margin: 40px -28px 0; overflow: hidden; -webkit-mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-  .strip .track { display: flex; gap: 22px; width: max-content; padding: 6px 0 22px; animation: pan 60s linear infinite; }
-  .strip:hover .track { animation-play-state: paused; }
-  .strip a { position: relative; display: block; width: clamp(240px, 30vw, 380px); aspect-ratio: 16/10; background: #fff; outline: 8px solid #fff; overflow: hidden; box-shadow: 0 30px 40px -24px rgba(23,22,20,.55); flex: none; }
-  .strip a img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; position: relative; z-index: 1; }
-  .strip a span.host { position: absolute; inset: 0; display: grid; place-items: center; color: var(--mute); font-weight: 600; font-size: .9rem; }
-  @keyframes pan { to { transform: translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce) { .strip .track { animation: none; } .strip { overflow-x: auto; } }
-
   header.top { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--wall) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid transparent; transition: border-color .3s; }
   header.top.stuck { border-color: var(--ink); }
   .idx { display: flex; gap: 6px 22px; flex-wrap: wrap; font-size: .95rem; font-weight: 500; }
@@ -121,6 +111,7 @@
   @media (max-width: 760px) { .idx { display: none; } }
   .work { scroll-margin-top: 70px; }
   .prog { position: fixed; left: 0; top: 0; height: 3px; width: 100%; transform-origin: 0 0; transform: scaleX(0); background: var(--dot); z-index: 30; }
+
 </style>
 </head>
 <body>
@@ -133,7 +124,6 @@
 
   <section class="lobby">
     <h1>miguelicoo<i>mr1</i></h1>
-    <div class="strip" aria-label="Webs realizadas"><div class="track"></div></div>
     <div class="lobby-row">
       <p class="lede">Ayudándote a mejorar tu negocio.</p>
       <a class="btn" href="#contacto">Hablemos
@@ -162,10 +152,10 @@
 <script>
 window.PORTFOLIO = {
   projects: [
-    { name: "Mosco Events", url: "https://www.moscoevents.com/index.html", logo: "assets/logos/moscoevents.png",
+    { name: "Mosco Events", url: "https://www.moscoevents.com/index.html", logo: "../assets/logos/moscoevents.png",
       description: "Web para una organización de partidas de airsoft realistas. Los jugadores se inscriben, consultan las imágenes de los eventos y contactan con el propietario.",
       tags: ["Inscripciones", "Galería de imágenes", "Contacto"] },
-    { name: "Supremo Barber", url: "https://supremo-1uh.pages.dev", logo: "assets/logos/supremo.png",
+    { name: "Supremo Barber", url: "https://supremo-1uh.pages.dev", logo: "../assets/logos/supremo.png",
       description: "Web para una barbería de ciudad, con sistema de registro de citas y una zona privada desde la que el negocio administra su agenda.",
       tags: ["Reserva de citas", "Zona privada", "Administración"] },
     { name: "Los Tres Pacos", url: "https://los-tres-pacos.pages.dev/", logo: "https://los-tres-pacos.pages.dev/assets/img/icon-192.png",
@@ -238,14 +228,6 @@ window.PORTFOLIO = {
     rows.appendChild(li);
   }
   document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-<script>
-(()=>{
-
-  const P=window.PORTFOLIO, tr=document.querySelector(".strip .track");
-  for(let k=0;k<2;k++) P.projects.forEach(p=>{ const a=document.createElement("a"); a.href=p.url; a.target="_blank"; a.rel="noopener noreferrer"; a.setAttribute("aria-label","Visitar "+p.name); if(k) a.setAttribute("aria-hidden","true"), a.tabIndex=-1; a.innerHTML="<span class=host></span>"; a.firstChild.textContent=P.host(p); P.shot(a,p); tr.appendChild(a); });
-
-})();
 </script>
 <script>
 (()=>{

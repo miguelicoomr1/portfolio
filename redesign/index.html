@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rediseño · Elige una dirección</title>
+<style>
+  :root { --bg:#f4f2ee; --ink:#171614; --mute:#63605a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, "Segoe UI", sans-serif; padding: 40px 24px 64px; }
+  .wrap { max-width: 1280px; margin: 0 auto; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.02em; }
+  .lead { color: var(--mute); max-width: 60ch; margin-top: 8px; }
+  .grid { display: grid; gap: 24px; margin-top: 32px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  .card { background: #fff; border: 1px solid #d9d5cc; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .thumb { position: relative; height: 320px; overflow: hidden; background: #ddd; border-bottom: 1px solid #d9d5cc; }
+  .thumb iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 1024px; border: 0; transform: scale(.32); transform-origin: 0 0; pointer-events: none; }
+  .body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .body h2 { font-size: 1.3rem; letter-spacing: -.01em; }
+  .body p { color: var(--mute); font-size: .95rem; }
+  .sw { display: flex; gap: 6px; margin-top: 2px; }
+  .sw i { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(0,0,0,.15); }
+  .risk { font-size: .88rem; color: var(--mute); border-top: 1px solid #ece8df; padding-top: 10px; margin-top: auto; }
+  .risk b { color: var(--ink); }
+  a.open { display: inline-block; margin-top: 4px; background: var(--ink); color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 999px; font-weight: 600; align-self: flex-start; }
+  a.open:hover { background: #3a3733; }
+  .note { margin-top: 28px; color: var(--mute); font-size: .9rem; }
+  .note a { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Rediseño del portfolio: 3 direcciones</h1>
+  <p class="lead">Mismo contenido real en las tres (5 proyectos, contacto). Cambia el mundo visual. Abre cada una a pantalla completa, prueba en móvil y dime cuál seguimos.</p>
+
+  <div class="grid">
+    <article class="card">
+      <div class="thumb"><iframe src="opcion-1-rotulo.html" title="Opción 1" loading="lazy"></iframe></div>
+      <div class="body">
+        <h2>1 · Rótulo</h2>
+        <p>Rotulista de barrio: fondo amarillo, cartel negro, toldo a rayas y cada web como un escaparate. Cerca de los clientes que atiendes (bares, barberías, climatización).</p>
+        <div class="sw"><i style="background:#f6c515"></i><i style="background:#14182b"></i><i style="background:#d7372b"></i><i style="background:#fff6da"></i></div>
+        <p class="risk"><b>Riesgo:</b> muy expresiva y cálida; menos "tech" para recruiters.</p>
+        <a class="open" href="opcion-1-rotulo.html">Abrir opción 1</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="thumb"><iframe src="opcion-2-montaje.html" title="Opción 2" loading="lazy"></iframe></div>
+      <div class="body">
+        <h2>2 · Manual de montaje</h2>
+        <p>Instrucciones de piezas: cielo azul con tacos, hojas con contorno negro, cada proyecto es un paso que cae en su sitio. Explica "construyo tu web pieza a pieza".</p>
+        <div class="sw"><i style="background:#8fd3f4"></i><i style="background:#101418"></i><i style="background:#e3242b"></i><i style="background:#ffd21f"></i></div>
+        <p class="risk"><b>Riesgo:</b> juguetona; puede leerse infantil si el cliente es serio.</p>
+        <a class="open" href="opcion-2-montaje.html">Abrir opción 2</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="thumb"><iframe src="opcion-3-galeria.html" title="Opción 3" loading="lazy"></iframe></div>
+      <div class="body">
+        <h2>3 · Galería</h2>
+        <p>Sala de exposición: pared piedra, tinta negra, un punto rojo. Cada web colgada a gran tamaño con su cartela. Deja que el trabajo mande.</p>
+        <div class="sw"><i style="background:#e8e4db"></i><i style="background:#171614"></i><i style="background:#c8371d"></i></div>
+        <p class="risk"><b>Riesgo:</b> la más sobria y cercana a lo habitual en portfolios.</p>
+        <a class="open" href="opcion-3-galeria.html">Abrir opción 3</a>
+      </div>
+    </article>
+  </div>
+  <p class="note">Versión actual (oscura, latón): <a href="../index.html">../index.html</a>. Las previews de webs vienen de image.thum.io y tardan unos segundos.</p>
+</div>
+</body>
+</html>
